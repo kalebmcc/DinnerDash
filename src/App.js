@@ -8,21 +8,24 @@ import {useState,useEffect} from 'react'
 import {DataContext} from './contexts/DataContext.js'
 import SignUpForm from './components/Forms/SignUpForm';
 import SignInForm from './components/Forms/SignInForm';
+import NewRecipe from './components/Forms/NewRecipe';
+import SelectRecipe from './components/Gallery/SelectRecipe';
+import UserProfile from './components/UserProfile';
 
 function App() {
   const [recipes, setRecipes] = useState()
-  const [user,setUser] = useState()
+  const [logUser, setLogUser] = useState(localStorage.getItem('user'));
   const [loginStatus, setLoginStatus] = useState(
 		false || localStorage.getItem('loginStatus')
 	);
-  const [cat, setCat] = useState();
+  const [cat, setCat] = useState({category: 'Asian'});
 
   useEffect(()=> {
     // INITIAL RECIPES
     const recipesURL =
 			'https://boiling-escarpment-83647.herokuapp.com/recipes/';
     axios.get(recipesURL)
-    .then(res=>setRecipes(res))
+    .then(res=>setRecipes(res.data))
     .catch(err=>console.log(err))
   },[])
 
@@ -33,8 +36,8 @@ function App() {
           cat,
           setCat,
           recipes,
-          user,
-          setUser,
+          logUser,
+          setLogUser,
 					loginStatus,
 					setLoginStatus,
 				}}>
@@ -50,7 +53,15 @@ function App() {
 				<Route path='/signin_form'>
 					<SignInForm />
 				</Route>
-        
+        <Route path='/new_recipe_form'>
+          <NewRecipe/>
+        </Route>
+        <Route path='/recipes/:title'>
+          <SelectRecipe/>
+        </Route>
+        <Route path='/user/'>
+          <UserProfile/>
+        </Route>
 			</DataContext.Provider>
 		</div>
 	);

@@ -9,11 +9,19 @@ export default function Categories() {
 
     const {cat,setCat} = useContext(DataContext)
 
+    function changeCat(event){
+        event.preventDefault()
+
+        console.log(event)
+        setCat({category: event.target.innerHTML})
+    }
+
     return (
         <div>
             <Tabs
   className="tab-demo z-depth-1"
   scope="tabs-22"
+  onChange={changeCat}
 >
   <Tab
     options={{
@@ -23,6 +31,7 @@ export default function Categories() {
       swipeable: false
     }}
     title="Americana"
+    
   >
     <Gallery/>
   </Tab>
@@ -36,7 +45,7 @@ export default function Categories() {
     }}
     title="Asian"
   >
-    Test 2
+    <Gallery/>
   </Tab>
   <Tab
     options={{
@@ -47,7 +56,7 @@ export default function Categories() {
     }}
     title="Italian"
   >
-    Test 3
+    <Gallery/>
   </Tab>
   <Tab
     options={{
@@ -58,7 +67,7 @@ export default function Categories() {
     }}
     title="Mexican"
   >
-    Test 4
+    <Gallery/>
   </Tab>
   <Tab
     options={{
@@ -69,7 +78,7 @@ export default function Categories() {
     }}
     title="Dessert"
   >
-    Test 4
+    <Gallery/>
   </Tab>
   <Tab
     options={{
@@ -80,7 +89,7 @@ export default function Categories() {
     }}
     title="Soup"
   >
-    Test 4
+    <Gallery/>
   </Tab>
   <Tab
     options={{
@@ -91,7 +100,7 @@ export default function Categories() {
     }}
     title="Crockpot"
   >
-    Test 4
+    <Gallery/>
   </Tab>
 
 </Tabs>

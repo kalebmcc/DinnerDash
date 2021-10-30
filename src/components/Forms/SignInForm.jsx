@@ -11,17 +11,14 @@ export default function SignInForm() {
 
     let history = useHistory();
     const {loginStatus, setLoginStatus} = useContext(DataContext)
-    const { user,setUser } = useContext(DataContext);
-    const [logUser, setLogUser] = useState({
-		'email': '',
-		'password': ''
-	});
+    const {logUser,setLogUser } = useContext(DataContext);
 
     async function handleSubmit(event){
         event.preventDefault();
 
         try {
             let addUser = {...logUser}
+            
             const addUserURL = 'https://boiling-escarpment-83647.herokuapp.com/token/login'
             console.log(addUser)
             let res = await axios.post(addUserURL, addUser)
@@ -31,11 +28,30 @@ export default function SignInForm() {
 				localStorage.setItem('token', res.data.auth_token);
 				localStorage.setItem('loginStatus', loginStatus);
                 M.toast({html:'Signed In!'})
-                history.push('/')
+                getUser()
+                
+                
             }
         } catch (error) {
             M.toast({html: 'Unexpected Error! Try Again!'})
         }
+    }
+
+
+    async function getUser(){
+        try {
+            const getUsers = 'https://boiling-escarpment-83647.herokuapp.com/users/me'
+            let users = await axios.get(getUsers,{headers: {
+						Authorization: `token ${localStorage.getItem('token')}`,
+					}})
+                console.log(users)
+                localStorage.setItem('user', users.data.username);
+                history.push('/')
+        } catch (error) {
+            console.log(error)
+        }
+
+                
     }
 
     function handleChange(event){

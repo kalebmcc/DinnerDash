@@ -1,25 +1,22 @@
 import React from 'react'
-import { DataContext } from '../../contexts/DataContext'
-import {Link} from 'react-router-dom'
-import { useContext, useEffect, useState } from 'react'
+import {useContext, useState, useEffect} from 'react'
+import {DataContext} from '../contexts/DataContext'
 import {Col,Card,Row, Icon, CardTitle} from 'react-materialize'
 import 'materialize-css'
 
-export default function RecipeCard() {
-    const {recipes,cat} = useContext(DataContext)
+export default function UserProfile() {
+    const {logUser,recipes} = useContext(DataContext)
     const [currentRecipes,setCurrentRecipes] = useState(null)
-    let selectRecipes = null
- useEffect(() => {
-        if(recipes){
+useEffect(() => {
+     let selectRecipes = null
+    if(recipes){
         selectRecipes = recipes.filter((recipe)=>{
-            return recipe.category === cat.category
+            return recipe.owner === logUser.username
         })
         setCurrentRecipes(selectRecipes)
     }
- }, [cat])
-    
-    console.log(currentRecipes)
-    
+}, [])
+   
 
     if(currentRecipes === null){
         return <h1>loading</h1>
@@ -28,7 +25,12 @@ export default function RecipeCard() {
         return <h1>No Recipes :(</h1>
     }
     return (
-        <div style={{display:'flex',flexWrap:'wrap',gap:'10px'}}>
+        <div>
+            <h1>Hi, {logUser.username}</h1>
+
+
+
+            <div style={{display:'flex',flexWrap:'wrap',gap:'10px'}}>
             
     
                         {currentRecipes.map((recipe,id) =>(
@@ -45,6 +47,7 @@ export default function RecipeCard() {
                         ))}
 
             
+        </div>
         </div>
     )
 }
