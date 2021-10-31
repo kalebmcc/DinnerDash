@@ -116,7 +116,8 @@ export default function EditRecipe() {
             <h5><em>{currentRecipes[0].category}</em></h5>
             <p>Posted by: {currentRecipes[0].owner}</p>
             <img alt={currentRecipes[0].title} src={currentRecipes[0].image} style={{width:'70%',maxWidth:'650px'}}/>
-            <h5><strong>Ingredients:</strong> {currentRecipes[0].ingredients}</h5>
+            <h5><strong>Ingredients:</strong> {currentRecipes[0].ingredients}</h5><br/>
+            <h5><strong>Directions:</strong> {currentRecipes[0].directions}</h5><br/>
             <p>{currentRecipes[0].description}</p>
 
         </div>

@@ -59,8 +59,10 @@ export default function SelectRecipe() {
             <h5><em>{currentRecipes[0].category}</em></h5>
             <p>Posted by: {currentRecipes[0].owner}</p>
             <img alt={currentRecipes[0].title} src={currentRecipes[0].image} style={{width:'70%',maxWidth:'650px'}}/>
-            <h5><strong>Ingredients:</strong> {currentRecipes[0].ingredients}</h5>
             <p>{currentRecipes[0].description}</p>
+            <h5><strong>Ingredients:</strong> {currentRecipes[0].ingredients}</h5><br/>
+            <h5><strong>Directions:</strong> {currentRecipes[0].directions}</h5><br/>
+        
             {logUser === currentRecipes[0].owner ? 
             <div style={{display:'flex',justifyContent:'center',gap:'40px',marginBottom: '50px'}}>
             <Button onClick={recipeDelete} style={{backgroundColor:'red'}}>DELETE</Button><br/>
