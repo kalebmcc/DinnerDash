@@ -1,8 +1,7 @@
 import React from 'react'
 import { DataContext } from '../../contexts/DataContext'
-import {Link} from 'react-router-dom'
 import { useContext, useEffect, useState } from 'react'
-import {Col,Card,Row, Icon, CardTitle} from 'react-materialize'
+import {Card, Icon, CardTitle} from 'react-materialize'
 import 'materialize-css'
 
 export default function RecipeCard() {
@@ -18,26 +17,25 @@ export default function RecipeCard() {
     }
  }, [cat])
     
-    console.log(currentRecipes)
     
 
-    if(currentRecipes === null){
-        return <h1>loading</h1>
+    while(!currentRecipes){
+        return <h5 style={{paddingTop: '100px'}}>Click a Category!</h5>
     }
     if(currentRecipes.length === 0){
-        return <h1>No Recipes :(</h1>
+        return <h5 style={{paddingTop: '100px'}}>No Recipes :(</h5>
     }
     return (
-        <div style={{display:'flex',flexWrap:'wrap',gap:'10px'}}>
+        <div style={{display:'flex',flexWrap:'wrap',gap:'10px',justifyContent:'center'}}>
             
     
                         {currentRecipes.map((recipe,id) =>(
                         <Card style={{width:'450px', height:'auto'}}
                         actions={[
-                            <a key="1" href={'recipes/' + recipe.title}>View Recipe</a>
+                            <a key="1" href={'recipes/' + recipe.id}>View Recipe</a>
                         ]}
                         closeIcon={<Icon>close</Icon>}
-                        header={<CardTitle image="https://materializecss.com/images/sample-1.jpg">{recipe.title}</CardTitle>}
+                        header={<CardTitle image={recipe.image}>{recipe.title}</CardTitle>}
                         revealIcon={<Icon>more_vert</Icon>}
                         >
                         {recipe.description}

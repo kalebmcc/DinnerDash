@@ -1,8 +1,8 @@
 import React from 'react'
-import {useState,useContext} from 'react'
+import {useContext} from 'react'
 import {useHistory} from 'react-router-dom'
 import 'materialize-css'
-import { Button, Modal, TextInput,Toast } from 'react-materialize'
+import { Button, TextInput } from 'react-materialize'
 import axios from 'axios';
 import M from 'materialize-css';
 import {DataContext} from '../../contexts/DataContext.js'
@@ -60,7 +60,8 @@ export default function SignInForm() {
         setLogUser({ ...logUser, [event.target.className]: event.target.value })
     } 
     return (
-        <div className='signinform'>
+        <div className='signinform' style={{display:'flex',justifyContent:'center'}}>
+            <div style={{width:'65%'}}>
             <h4>Sign In</h4>
             <form onSubmit={handleSubmit}>
         <TextInput
@@ -82,6 +83,7 @@ export default function SignInForm() {
         <Button type='submit'>SUBMIT</Button>
         
   </form>
+  </div>
         </div>
     )
 }

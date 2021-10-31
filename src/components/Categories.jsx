@@ -7,12 +7,11 @@ import {useContext} from 'react'
 
 export default function Categories() {
 
-    const {cat,setCat} = useContext(DataContext)
+    const {setCat} = useContext(DataContext)
 
     function changeCat(event){
         event.preventDefault()
 
-        console.log(event)
         setCat({category: event.target.innerHTML})
     }
 
@@ -36,7 +35,6 @@ export default function Categories() {
     <Gallery/>
   </Tab>
   <Tab
-    active
     options={{
       duration: 300,
       onShow: null,

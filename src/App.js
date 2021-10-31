@@ -1,4 +1,3 @@
-import logo from './logo.svg';
 import './App.css';
 import Nav from './components/Nav.jsx';
 import Categories from './components/Categories';
@@ -9,8 +8,9 @@ import {DataContext} from './contexts/DataContext.js'
 import SignUpForm from './components/Forms/SignUpForm';
 import SignInForm from './components/Forms/SignInForm';
 import NewRecipe from './components/Forms/NewRecipe';
-import SelectRecipe from './components/Gallery/SelectRecipe';
+import SelectRecipe from './components/SelectRecipe.jsx';
 import UserProfile from './components/UserProfile';
+import EditRecipe from './components/Forms/EditRecipe';
 
 function App() {
   const [recipes, setRecipes] = useState()
@@ -33,11 +33,11 @@ function App() {
 		<div className='App'>
 			<DataContext.Provider
 				value={{
-          cat,
-          setCat,
-          recipes,
-          logUser,
-          setLogUser,
+					cat,
+					setCat,
+					recipes,
+					logUser,
+					setLogUser,
 					loginStatus,
 					setLoginStatus,
 				}}>
@@ -53,15 +53,18 @@ function App() {
 				<Route path='/signin_form'>
 					<SignInForm />
 				</Route>
-        <Route path='/new_recipe_form'>
-          <NewRecipe/>
-        </Route>
-        <Route path='/recipes/:title'>
-          <SelectRecipe/>
-        </Route>
-        <Route path='/user/'>
-          <UserProfile/>
-        </Route>
+				<Route path='/new_recipe_form'>
+					<NewRecipe />
+				</Route>
+				<Route path='/recipes/:id'>
+					<SelectRecipe />
+				</Route>
+				<Route path='/update_recipe/:id'>
+					<EditRecipe />
+				</Route>
+				<Route path='/user/'>
+					<UserProfile />
+				</Route>
 			</DataContext.Provider>
 		</div>
 	);

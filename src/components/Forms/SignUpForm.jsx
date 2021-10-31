@@ -1,8 +1,8 @@
 import React from 'react'
-import {useState,useEffect} from 'react'
+import {useState} from 'react'
 import {useHistory} from 'react-router-dom'
 import 'materialize-css'
-import { Button, Modal, TextInput,Toast } from 'react-materialize'
+import { Button, TextInput} from 'react-materialize'
 import axios from 'axios';
 import M from 'materialize-css';
 
@@ -39,7 +39,9 @@ export default function SignUpForm() {
         setNewUser({ ...newUser, [event.target.className]: event.target.value })
     } 
     return (
-        <div className='signupform'>
+        <div className='signupform' style={{display:'flex',justifyContent:'center'}}>
+            <div style={{width:'65%'}}>
+             <h4>Sign Up</h4>
             <form onSubmit={handleSubmit}>
         <TextInput
             email
@@ -73,6 +75,7 @@ export default function SignUpForm() {
         <Button type='submit'>SUBMIT</Button>
         
   </form>
+  </div>
         </div>
     )
 }

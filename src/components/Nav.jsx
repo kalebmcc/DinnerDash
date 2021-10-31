@@ -1,9 +1,7 @@
 import React from 'react'
 import 'materialize-css'
-import { Button, Navbar,Icon,NavItem } from 'react-materialize';
-import SignUp from './Forms/SignUpButton';
-import SignIn from './Forms/SignInButton';
-import {Link, useHistory} from 'react-router-dom';
+import { Navbar,Icon,NavItem } from 'react-materialize';
+import { useHistory} from 'react-router-dom';
 import {useContext} from 'react'
 import { DataContext } from '../contexts/DataContext';
 
@@ -12,7 +10,7 @@ export default function Nav() {
 
 	let history = useHistory();
 	const {loginStatus, setLoginStatus} = useContext(DataContext)
-	const { logUser,setLogUser } = useContext(DataContext);
+	const { setLogUser } = useContext(DataContext);
 
 	function logOutUser() {
 		setLogUser(null);
@@ -24,7 +22,7 @@ export default function Nav() {
     return (
 			<div>{!loginStatus ? <Navbar
   alignLinks="right"
-  brand={<a className="brand-logo" href="/">Dinner Dash</a>}
+  brand={<a className="brand-logo" href="/">DINNER DASH</a>}
   centerChildren
   centerLogo
   id="mobile-nav"
@@ -81,7 +79,7 @@ export default function Nav() {
 				: 
 				<Navbar
   alignLinks="right"
-  brand={<a className="brand-logo" href="/">Dinner Dash</a>}
+  brand={<a className="brand-logo" href="/">DINNER DASH</a>}
   id="mobile-nav"
   menuIcon={<Icon>menu</Icon>}
   options={{

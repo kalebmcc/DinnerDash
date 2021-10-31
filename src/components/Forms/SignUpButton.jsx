@@ -1,14 +1,14 @@
 import React from 'react'
-import {useState,useEffect} from 'react'
+import {useState} from 'react'
 import {useHistory} from 'react-router-dom'
 import 'materialize-css'
-import { Button, Modal, TextInput,Toast } from 'react-materialize'
+import { Button, Modal} from 'react-materialize'
 import axios from 'axios';
 import M from 'materialize-css';
 
 export default function SignUp() {
     let history = useHistory();
-    const [newUser, setNewUser] = useState();
+    const [newUser] = useState();
 
     async function handleSubmit(event){
         event.preventDefault();
@@ -25,12 +25,6 @@ export default function SignUp() {
             M.toast({html: 'Unexpected Error! Try Again!'})
         }
     }
-
-    function handleChange(event){
-        event.preventDefault();
-
-        setNewUser(event.target.value)
-    } 
 
 
 
