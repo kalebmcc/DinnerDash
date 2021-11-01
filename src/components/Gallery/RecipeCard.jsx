@@ -35,9 +35,10 @@ export default function RecipeCard() {
                             <a key="1" href={'recipes/' + recipe.id}>View Recipe</a>
                         ]}
                         closeIcon={<Icon>close</Icon>}
-                        header={<CardTitle style={{width:'450px'}}image={recipe.image}>{recipe.title}</CardTitle>}
+                        title={recipe.title}
                         revealIcon={<Icon>more_vert</Icon>}
                         >
+                        <img style={{width:'350px',height:'350px'}}src={recipe.image}/><br/>
                         {recipe.description}
                         </Card>
                         ))}

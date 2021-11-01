@@ -40,14 +40,15 @@ useEffect(() => {
             
     
                         {currentRecipes.map((recipe,id) =>(
-                        <Card style={{width:'450px', height:'auto'}}
+                        <Card style={{width:'450px',height:'auto'}}
                         actions={[
-                            <a key="1" href={'/recipes/' + recipe.id}>View Recipe</a>
+                            <a key="1" href={'recipes/' + recipe.id}>View Recipe</a>
                         ]}
                         closeIcon={<Icon>close</Icon>}
-                        header={<CardTitle image={recipe.image}>{recipe.title}</CardTitle>}
+                        title={recipe.title}
                         revealIcon={<Icon>more_vert</Icon>}
                         >
+                        <img style={{width:'350px',height:'350px'}}src={recipe.image}/><br/>
                         {recipe.description}
                         </Card>
                         ))}
