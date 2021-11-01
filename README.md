@@ -2,6 +2,8 @@
 <br/>
 Dinner Dash is a full-stack application that is able to allow for multiple users to all share their favorite recipes with each other. Each user is able to edit and delete their own posts with the authorization token from Django.
 <br/>
+<br/>
+<br/>
 <img src="https://user-images.githubusercontent.com/88410952/139682036-9e295b7b-0b14-4fa7-999c-1c27a3280d30.png"/>
 <br/>
 <img src="https://user-images.githubusercontent.com/88410952/139686757-e0a02fbd-b11e-481d-be5f-aede32f7b5bd.png"/>
