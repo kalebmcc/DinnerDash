@@ -29,7 +29,7 @@ export default function Categories() {
       responsiveThreshold: Infinity,
       swipeable: false
     }}
-    title="Americana"
+    title="American"
     
   >
     <Gallery/>
