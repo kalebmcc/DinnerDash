@@ -49,7 +49,7 @@ useEffect(() => {
                         revealIcon={<Icon>more_vert</Icon>}
                         >
                         <img style={{width:'350px',height:'350px'}}src={recipe.image}/><br/>
-                        {recipe.description}
+                        <p>{recipe.description}</p>
                         </Card>
                         ))}
 
