@@ -30,12 +30,12 @@ export default function RecipeCard() {
             
     
                         {currentRecipes.map((recipe,id) =>(
-                        <Card style={{width:'450px', height:'auto'}}
+                        <Card style={{width:'450px',height:'auto'}}
                         actions={[
                             <a key="1" href={'recipes/' + recipe.id}>View Recipe</a>
                         ]}
                         closeIcon={<Icon>close</Icon>}
-                        header={<CardTitle image={recipe.image}>{recipe.title}</CardTitle>}
+                        header={<CardTitle style={{width:'450px'}}image={recipe.image}>{recipe.title}</CardTitle>}
                         revealIcon={<Icon>more_vert</Icon>}
                         >
                         {recipe.description}
