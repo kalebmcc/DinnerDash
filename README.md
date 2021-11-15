@@ -16,6 +16,7 @@ Dinner Dash is a full-stack application that is able to allow for multiple users
 <li>React
 <li>Django
 <li>PostgreSQL
+<li>Materialize React Components
   
 # Getting Started
 To download and run this application:
