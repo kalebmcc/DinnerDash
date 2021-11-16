@@ -2,7 +2,7 @@ import React from 'react'
 import {useState} from 'react'
 import {useHistory} from 'react-router-dom'
 import 'materialize-css'
-import { Button, TextInput } from 'react-materialize'
+import { Button, TextInput, Select, Textarea, Row  } from 'react-materialize'
 import axios from 'axios';
 import M from 'materialize-css';
 
@@ -43,44 +43,147 @@ export default function NewRecipe() {
             <div style={{width:'65%'}}>
             <h4>New Recipe</h4>
             <form onSubmit={handleSubmit}>
+            <Row>
         <TextInput
             id="TextInput-376"
             label="Title"
             className='title'
             onChange={handleChange}
-            /><br/>
-        <TextInput
+            l={12}
+            m={12}
+            s={12}
+            xl={12}
+            />
+            </Row>
+            <br/>
+            <Row>
+                <TextInput
             id="TextInput-376"
             label="Category"
             className='category'
             onChange={handleChange}
-            /><br/>
-            <TextInput
+            l={12}
+            m={12}
+            s={12}
+            xl={12}
+            />
+            {/* <Select
+                id="Select-74"
+                multiple={false}
+                onChange={handleChange}
+                l={12}
+                m={12}
+                s={12}
+                xl={12}
+                options={{
+                    classes: '',
+                    dropdownOptions: {
+                    alignment: 'left',
+                    autoTrigger: true,
+                    closeOnClick: true,
+                    constrainWidth: true,
+                    coverTrigger: true,
+                    hover: false,
+                    inDuration: 150,
+                    onCloseEnd: null,
+                    onCloseStart: null,
+                    onOpenEnd: null,
+                    onOpenStart: null,
+                    outDuration: 250
+                    }
+                }}
+                value=""
+                >
+                <option
+                    disabled
+                    value=""
+                >
+                    Choose your Category
+                </option>
+                <option value="1">
+                    American
+                </option>
+                <option value="2">
+                    Asian
+                </option>
+                <option value="4">
+                    Italian
+                </option>
+                <option value="5">
+                    Mexican
+                </option>
+                <option value="6">
+                    Dessert
+                </option>
+                <option value="7">
+                    Soup
+                </option>
+                <option value="8">
+                    Crockpot
+                </option>
+                <option value="9">
+                    Other
+                </option>
+                </Select> */}
+                </Row>
+            <br/>
+            <Row>
+        <TextInput
             id="TextInput-376"
-            label="Imgur Link"
+            label="Link"
             className='image'
             onChange={handleChange}
-            /><br/>
-            <TextInput
-            id="TextInput-376"
-            label="Ingredients"
-            className='ingredients'
-            onChange={handleChange}
-            /><br/>
-            <TextInput
-            id="TextInput-376"
-            label="Directions"
-            className='directions'
-            onChange={handleChange}
-            /><br/>
-            <TextInput
-            id="TextInput-376"
-            label="Description"
-            className='description'
-            onChange={handleChange}
-            /><br/>
+            l={12}
+            m={12}
+            s={12}
+            xl={12}
+            />
+            </Row>
+            <br/>
+            <Row>
+                <Textarea
+                    id="Textarea-42"
+                    label="Ingredients"
+                    className="ingredients"
+                    onChange={handleChange}
+                    type="text"
+                    l={12}
+                    m={12}
+                    s={12}
+                    xl={12}
+                />
+            </Row>
+            <br/>
+            <Row>
+                <Textarea
+                    id="Textarea-42"
+                    label="Directions"
+                    className="directions"
+                    onChange={handleChange}
+                    type="text"
+                    l={12}
+                    m={12}
+                    s={12}
+                    xl={12}
+                />
+            </Row>
+            <br/>
+            <Row>
+                <Textarea
+                    id="Textarea-42"
+                    label="Description"
+                    className="description"
+                    onChange={handleChange}
+                    type="text"
+                    l={12}
+                    m={12}
+                    s={12}
+                    xl={12}
+                />
+            </Row>
+            <br/>
 
-        <Button type='submit'>SUBMIT</Button>
+        <Button type='submit' style={{marginBottom: '75px'}}>SUBMIT</Button>
         
   </form>
   </div>

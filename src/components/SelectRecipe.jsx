@@ -53,7 +53,7 @@ export default function SelectRecipe() {
         return <h5 style={{paddingTop: '100px'}}>No Recipes :(</h5>
     }
     return (
-        <div>
+        <div style={{padding: '0 15%', marginBottom: '50px'}}>
 
             <h2>{currentRecipes[0].title}</h2>
             <h5><em>{currentRecipes[0].category}</em></h5>

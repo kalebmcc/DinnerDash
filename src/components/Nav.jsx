@@ -81,6 +81,7 @@ export default function Nav() {
   alignLinks="right"
   brand={<a className="brand-logo" href="/">DINNER DASH</a>}
   id="mobile-nav"
+  centerLogo
   menuIcon={<Icon>menu</Icon>}
   options={{
     draggable: true,
