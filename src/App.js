@@ -1,10 +1,10 @@
 import './App.css';
 import Nav from './components/Nav.jsx';
 import Categories from './components/Categories';
-import { Route } from 'react-router-dom';
-import axios from 'axios';
-import { useState, useEffect } from 'react';
-import { DataContext } from './contexts/DataContext.js';
+import {Route} from 'react-router-dom';
+import axios from 'axios'
+import {useState,useEffect} from 'react'
+import {DataContext} from './contexts/DataContext.js'
 import SignUpForm from './components/Forms/SignUpForm';
 import SignInForm from './components/Forms/SignInForm';
 import NewRecipe from './components/Forms/NewRecipe';
@@ -13,24 +13,23 @@ import UserProfile from './components/UserProfile';
 import EditRecipe from './components/Forms/EditRecipe';
 
 function App() {
-	const [recipes, setRecipes] = useState();
-	const [logUser, setLogUser] = useState(localStorage.getItem('user'));
-	const [loginStatus, setLoginStatus] = useState(
+  const [recipes, setRecipes] = useState()
+  const [logUser, setLogUser] = useState(localStorage.getItem('user'));
+  const [loginStatus, setLoginStatus] = useState(
 		false || localStorage.getItem('loginStatus')
 	);
-	const [cat, setCat] = useState({ category: 'Asian' });
+  const [cat, setCat] = useState({category: 'Asian'});
 
-	useEffect(() => {
-		// INITIAL RECIPES
-		const recipesURL =
-			'https://dinnerdashbackend-052fd4a08eaf.herokuapp.com/recipes/';
-		axios
-			.get(recipesURL)
-			.then((res) => setRecipes(res.data))
-			.catch((err) => console.log(err));
-	}, []);
+  useEffect(()=> {
+    // INITIAL RECIPES
+    const recipesURL =
+			'https://boiling-escarpment-83647.herokuapp.com/recipes/';
+    axios.get(recipesURL)
+    .then(res=>setRecipes(res.data))
+    .catch(err=>console.log(err))
+  },[])
 
-	return (
+  return (
 		<div className='App'>
 			<DataContext.Provider
 				value={{

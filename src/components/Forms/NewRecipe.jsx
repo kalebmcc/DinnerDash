@@ -17,7 +17,7 @@ export default function NewRecipe() {
 
         try {
             let addRecipe = {...newRecipe}
-            const addUserURL = 'https://dinnerdashbackend-052fd4a08eaf.herokuapp.com/recipes/'
+            const addUserURL = 'https://boiling-escarpment-83647.herokuapp.com/recipes/'
             console.log(addRecipe)
             let res = await axios.post(addUserURL, addRecipe,{headers: {
 						Authorization: `token ${localStorage.getItem('token')}`,
@@ -36,7 +36,7 @@ export default function NewRecipe() {
     function handleChange(event){
         event.preventDefault();
 
-        setNewRecipe({ ...newRecipe, [event.target.name]: event.target.value })
+        setNewRecipe({ ...newRecipe, [event.target.className]: event.target.value })
     } 
     return (
         <div style={{display:'flex',justifyContent:'center'}}>
@@ -48,7 +48,6 @@ export default function NewRecipe() {
             id="TextInput-376"
             label="Title"
             className='title'
-            name="title"
             onChange={handleChange}
             l={12}
             m={12}
@@ -62,7 +61,6 @@ export default function NewRecipe() {
             id="TextInput-376"
             label="Category"
             className='category'
-            name="category"
             onChange={handleChange}
             l={12}
             m={12}
@@ -134,7 +132,6 @@ export default function NewRecipe() {
             id="TextInput-376"
             label="Link"
             className='image'
-            name="image"
             onChange={handleChange}
             l={12}
             m={12}
@@ -148,7 +145,6 @@ export default function NewRecipe() {
                     id="Textarea-42"
                     label="Ingredients"
                     className="ingredients"
-                    name="ingredients"
                     onChange={handleChange}
                     type="text"
                     l={12}
@@ -163,7 +159,6 @@ export default function NewRecipe() {
                     id="Textarea-42"
                     label="Directions"
                     className="directions"
-                    name="directions"
                     onChange={handleChange}
                     type="text"
                     l={12}
@@ -178,7 +173,6 @@ export default function NewRecipe() {
                     id="Textarea-42"
                     label="Description"
                     className="description"
-                    name="description"
                     onChange={handleChange}
                     type="text"
                     l={12}
