@@ -15,7 +15,7 @@ export default function SignUp() {
 
         try {
             let addUser = {...newUser}
-            const addUserURL = 'https://boiling-escarpment-83647.herokuapp.com/users/'
+            const addUserURL = 'https://dinnerdashbackend-052fd4a08eaf.herokuapp.com/users/'
             let res = await axios.post(addUserURL, addUser)
             if(res){
                 M.toast({html:'Successfully Registered!'})

@@ -23,7 +23,7 @@ function App() {
   useEffect(()=> {
     // INITIAL RECIPES
     const recipesURL =
-			'https://boiling-escarpment-83647.herokuapp.com/recipes/';
+			'https://dinnerdashbackend-052fd4a08eaf.herokuapp.com/recipes/';
     axios.get(recipesURL)
     .then(res=>setRecipes(res.data))
     .catch(err=>console.log(err))
