@@ -21,7 +21,7 @@ export default function SignUpForm() {
 
         try {
             let addUser = {...newUser}
-            const addUserURL = 'https://boiling-escarpment-83647.herokuapp.com/users/'
+            const addUserURL = 'https://dinnerdashbackend-052fd4a08eaf.herokuapp.com/users/'
             console.log(addUser)
             let res = await axios.post(addUserURL, addUser)
             if(res){

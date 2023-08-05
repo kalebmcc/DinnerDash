@@ -19,7 +19,7 @@ export default function SignInForm() {
         try {
             let addUser = {...logUser}
             
-            const addUserURL = 'https://boiling-escarpment-83647.herokuapp.com/token/login'
+            const addUserURL = 'https://dinnerdashbackend-052fd4a08eaf.herokuapp.com/token/login'
             console.log(addUser)
             let res = await axios.post(addUserURL, addUser)
             if(res){
@@ -40,7 +40,7 @@ export default function SignInForm() {
 
     async function getUser(){
         try {
-            const getUsers = 'https://boiling-escarpment-83647.herokuapp.com/users/me'
+            const getUsers = 'https://dinnerdashbackend-052fd4a08eaf.herokuapp.com/users/me'
             let users = await axios.get(getUsers,{headers: {
 						Authorization: `token ${localStorage.getItem('token')}`,
 					}})

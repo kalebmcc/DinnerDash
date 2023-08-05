@@ -37,7 +37,7 @@ export default function EditRecipe() {
 
         try {
             let addRecipe = {...newRecipe}
-            const addUserURL = `https://boiling-escarpment-83647.herokuapp.com/recipes/` + id
+            const addUserURL = `https://dinnerdashbackend-052fd4a08eaf.herokuapp.com/recipes/` + id
             console.log(addRecipe)
             let res = await axios.put(addUserURL, addRecipe,{headers: {
 						Authorization: `token ${localStorage.getItem('token')}`,

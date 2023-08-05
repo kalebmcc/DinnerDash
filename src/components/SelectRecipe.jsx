@@ -29,7 +29,7 @@ export default function SelectRecipe() {
         event.preventDefault();
 
         try {
-            const addUserURL = `https://boiling-escarpment-83647.herokuapp.com/recipes/${currentRecipes[0].id}`
+            const addUserURL = `https://dinnerdashbackend-052fd4a08eaf.herokuapp.com/recipes/${currentRecipes[0].id}`
             
             let res = await axios.delete(addUserURL, {headers: {
 						Authorization: `token ${localStorage.getItem('token')}`,
